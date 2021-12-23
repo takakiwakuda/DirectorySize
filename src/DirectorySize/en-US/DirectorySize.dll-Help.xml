@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-DirectorySize</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>DirectorySize</command:noun>
+      <maml:description>
+        <maml:para>Gets the size of a directory.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The `Get-DirectorySize` cmdlet gets the size of a directory.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DirectorySize</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath, LP">
+          <maml:name>LiteralPath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the path to a directory.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Recurse</maml:name>
+          <maml:description>
+            <maml:para>Gets the total size of the specified directory and all its child files.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-DirectorySize</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies the path to a directory. Wildcard characters are permitted.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Recurse</maml:name>
+          <maml:description>
+            <maml:para>Gets the total size of the specified directory and all its child files.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath, LP">
+        <maml:name>LiteralPath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the path to a directory.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifies the path to a directory. Wildcard characters are permitted.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Recurse</maml:name>
+        <maml:description>
+          <maml:para>Gets the total size of the specified directory and all its child files.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a string that contains a path to `Get-DirectorySize`.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>DirectorySize.DirectorySizeInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>`Get-DirectorySize` returns a `DirectorySizeInfo` object that represents the size of a directory.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-DirectorySize</dev:code>
+        <dev:remarks>
+          <maml:para>This example gets the size of the current directory.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
