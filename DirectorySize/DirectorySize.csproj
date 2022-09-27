@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemlyName>DirectorySize</AssemlyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="System.Management.Automation" Version="7.2.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="DirectorySize.psd1" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="DirectorySize.format.ps1xml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

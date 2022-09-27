@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>DirectorySizeInfo</Name>
+      <ViewSelectedBy>
+        <TypeName>DirectorySize.DirectorySizeInfo</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <Label>Directory</Label>
+        <ScriptBlock>
+          if ($null -eq $_.Directory.Parent) {
+            return $null
+          }
+          return $_.Directory.Parent.FullName
+        </ScriptBlock>
+      </GroupBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>10</Width>
+            <Alignment>Right</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+            <Alignment>Right</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Directory</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>FilesCount</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Size</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  return $_.Directory.Name
+                </ScriptBlock>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>
