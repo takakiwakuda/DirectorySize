@@ -17,7 +17,8 @@ Describe "Get-DirectorySize" {
         It "Should retrieve DirectorySizeInfo objects for the path '<Path>'" -TestCases @(
             @{ Path = $PWD },
             @{ Path = $env:USERPROFILE },
-            @{ Path = "$PSScriptRoot\..\*" }
+            @{ Path = "$PSScriptRoot\..\*" },
+            @{ Path = "DoesNotExist", $env:APPDATA }
         ) {
             $dirSizeInfo = Get-DirectorySize -Path $Path
 
@@ -33,7 +34,7 @@ Describe "Get-DirectorySize" {
         }
 
         It "Throws an exception if the specified path contains wildcard characters (*)" {
-            $er = { Get-DirectorySize -LiteralPath * -ErrorAction Stop } | Should -Throw -PassThru
+            $er = { Get-DirectorySize -LiteralPath $PSScriptRoot\..\* -ErrorAction Stop } | Should -Throw -PassThru
 
             $er.FullyQualifiedErrorId | Should -Be "PathNotFound,DirectorySize.GetDirectorySizeCommand"
         }
@@ -46,7 +47,8 @@ Describe "Get-DirectorySize" {
 
         It "Should retrieve DirectorySizeInfo objects for the path '<Path>'" -TestCases @(
             @{ Path = $PWD },
-            @{ Path = $env:USERPROFILE }
+            @{ Path = $env:USERPROFILE },
+            @{ Path = "DoesNotExist", $env:APPDATA }
         ) {
             $dirSizeInfo = Get-DirectorySize -LiteralPath $Path
 

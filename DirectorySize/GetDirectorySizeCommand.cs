@@ -170,6 +170,7 @@ public sealed class GetDirectorySizeCommand : PSCmdlet
                     path);
 
                 WriteError(errorRecord);
+                continue;
             }
 
             if (isLiteralPath)
@@ -190,6 +191,7 @@ public sealed class GetDirectorySizeCommand : PSCmdlet
                     path);
 
                 WriteError(errorRecord);
+                continue;
             }
 
             filePaths.AddRange(resolvedPaths);
